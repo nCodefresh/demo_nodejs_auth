@@ -1,11 +1,3 @@
-## Deployment 
-
-For installation instructions, please use the following links:
-
-* [Local installation][install-local]
-* [Docker][install-docker]
-
-
 Installation
 -----------
 
@@ -16,3 +8,11 @@ npm install
 ```
 
 Running the application
+-----------
+
+```
+mongod --dbpath data/db
+node server.js
+```
+
+http://localhost:8080
