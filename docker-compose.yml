@@ -3,7 +3,7 @@ app:
     - mongo
   ports:
     - 8080:8080
-
+    - 5222:5222
 mongo:
   image: mongo:latest
   ports :
