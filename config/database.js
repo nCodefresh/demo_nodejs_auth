@@ -1,5 +1,5 @@
 var config          = require('./config');
 
 module.exports = {
-    'url' : 'mongodb://localhost:27018/test'
+    'url' : 'mongodb://localhost:27017/test'
 };
