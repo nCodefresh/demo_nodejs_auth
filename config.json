@@ -4,6 +4,6 @@
     "tokenLife" : 3600
   },
   "mongoose": {
-    "uri": "mongodb://mongo:27017/blog"
+    "uri": "mongodb://mongo:27017/test"
   }
 }

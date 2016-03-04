@@ -6,5 +6,5 @@ app:
 
 mongo:
   image: mongo:latest
-node:
-  image: node:latest
+  ports :
+    - 27017:27017

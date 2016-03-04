@@ -1,0 +1,57 @@
+### mongo
+First get the latest mongo image:
+    docker pull mongo:latest
+
+And when launch your MongoDB container:
+    docker run -v "$(pwd)":/data --name mongo -d mongo mongod --smallfiles
+
+The running containers can be checked by:
+    # display only running containers
+    docker ps
+
+    # or if you want all containers displayed
+    docker ps -a
+
+There are two options for connecting to your Mongo database.
+    docker run -it --link mongo:mongo --rm mongo sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
+    > show dbs
+    > exit
+
+Personally, I like just connecting to a running container and executing needed commands from it. You can do what with:
+    docker exec -it 442c2541fe1a bash # by ID
+    # or
+    docker exec -it mongo bash # by Name
+
+To test that your mongo database is working execute the following commands from mongo container:
+    db.col.insert({"a": 4})
+    db.col.find().pretty()
+
+### NodeJS
+First get the latest node image:
+    docker pull node:latest
+To launch the NodeJS container run:
+    docker run -it --rm node
+This will run the node container and will put you in the interactive shell (REPL) from which you can execute code. You can test it by entering:
+    console.log('It works!!')
+
+### NodeJS + MongoDB
+You have multiple ways of running your NodeJS applications. One which I personally like (especially for MongoDB course) is to create a container which has all the required data mounted and is linked to mongo container.
+    docker run -it --name node -v "$(pwd)":/data --link mongo:mongo -w /data -p 8080:8080 node bash
+
+
+    docker run -it --name automation -v "$(pwd)":/data --link mongo:mongo -w /data -p 8082:8082 node node server.js
+
+Stop running container:
+    # to see running containers
+    docker ps
+
+    # to check output of container
+    docker logs nodeapp
+
+    # to tail the output of container
+    docker logs -f nodeapp
+
+    # to stop running container
+    docker stop nodeapp
+
+    docker rm -f nodeapp
