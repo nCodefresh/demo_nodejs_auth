@@ -1,18 +1,10 @@
-Installation
------------
+## Deployment 
 
-```
-git clone https://github.com/nSoftteco/demo_nodejs_auth.git
-cd demo_nodejs_auth
-npm install
-```
+For installation instructions, please use the following links:
 
-Running the application
------------
+* [Local installation][install-local]
+* [Docker][install-docker]
+ 
 
-```
-mongod --dbpath data/db
-node server.js
-```
 
-http://localhost:8080
+[install-local]: https://github.com/nSoftteco/demo_nodejs_auth/wiki/Local-instalation
