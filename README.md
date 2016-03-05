@@ -8,5 +8,5 @@ For installation instructions, please use the following links:
  
 
 [install-local]: https://github.com/nSoftteco/demo_nodejs_auth/wiki/Local-instalation
-[docker-deploy]: 
-[codefresh-deploy]: 
+[docker-deploy]: https://github.com/nSoftteco/demo_nodejs_auth/wiki/Docker
+[codefresh-deploy]: https://github.com/nSoftteco/demo_nodejs_auth/wiki/Codefresh
